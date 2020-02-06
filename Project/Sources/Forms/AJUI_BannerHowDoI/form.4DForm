@@ -1,0 +1,582 @@
+﻿{
+	"destination": "detailScreen",
+	"shared": true,
+	"formSizeAnchor": "Rectangle5",
+	"rightMargin": 0,
+	"bottomMargin": 0,
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onDataChange",
+		"onUnload",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Rectangle": {
+					"type": "rectangle",
+					"top": -3,
+					"left": -1,
+					"width": 473,
+					"height": 531,
+					"stroke": "transparent"
+				},
+				"Oval": {
+					"type": "oval",
+					"top": 430,
+					"left": 391,
+					"width": 60,
+					"height": 60,
+					"fill": "#005493",
+					"stroke": "#025EA7"
+				},
+				"Oval1": {
+					"type": "oval",
+					"top": 440,
+					"left": 401,
+					"width": 40,
+					"height": 40,
+					"stroke": "#025EA7"
+				},
+				"Rectangle4": {
+					"type": "rectangle",
+					"top": -3,
+					"left": -1,
+					"width": 487,
+					"height": 85,
+					"fill": "#005EA8",
+					"stroke": "transparent"
+				},
+				"Picture2": {
+					"type": "picture",
+					"top": 429,
+					"left": 184,
+					"width": 96,
+					"height": 96,
+					"pictureFormat": "scaled",
+					"picture": "Images/Picture2.png"
+				},
+				"Rectangle5": {
+					"type": "rectangle",
+					"top": 508,
+					"left": 452,
+					"width": 20,
+					"height": 20,
+					"visibility": "hidden",
+					"fill": "#FF0000"
+				},
+				"Text2": {
+					"type": "text",
+					"top": 20,
+					"left": 1,
+					"width": 471,
+					"height": 44,
+					"stroke": "#FFFFFF",
+					"textAlign": "center",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 36,
+					"fontWeight": "bold",
+					"text": "How Do I"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 94,
+					"left": 61,
+					"width": 350,
+					"height": 30,
+					"stroke": "#005EA8",
+					"textAlign": "center",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "AJUI Banner"
+				},
+				"Invisible Button1": {
+					"type": "button",
+					"top": 429,
+					"left": 179,
+					"width": 109,
+					"height": 96,
+					"display": false,
+					"method": "ObjectMethods/Invisible Button1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"page": {
+					"type": "input",
+					"top": 443,
+					"left": 396,
+					"width": 50,
+					"height": 35,
+					"stroke": "#005493",
+					"textAlign": "center",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 28,
+					"fontWeight": "bold",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onLoad"
+					]
+				},
+				"Variable": {
+					"type": "input",
+					"top": 507,
+					"left": 4,
+					"width": 165,
+					"height": 14,
+					"dataSource": "AJUIB_Info ",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 10,
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "none"
+				}
+			}
+		},
+		{
+			"objects": {
+				"WinBanner1": {
+					"type": "groupBox",
+					"top": 180,
+					"left": 23,
+					"width": 432,
+					"height": 84,
+					"stroke": "#0000CD",
+					"text": "Window banner"
+				},
+				"btn_text": {
+					"type": "radio",
+					"top": 216,
+					"left": 49,
+					"width": 90,
+					"height": 24,
+					"text": "Text",
+					"focusable": false,
+					"radioGroup": "Group6",
+					"method": "ObjectMethods/btn_text.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_pict": {
+					"type": "radio",
+					"top": 216,
+					"left": 147,
+					"width": 97,
+					"height": 24,
+					"text": "Picture",
+					"focusable": false,
+					"radioGroup": "Group6",
+					"method": "ObjectMethods/btn_pict.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button2": {
+					"type": "button",
+					"top": 425,
+					"left": 26,
+					"width": 126,
+					"height": 37,
+					"text": "Go page 2",
+					"focusable": false,
+					"method": "ObjectMethods/Button2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button1": {
+					"type": "button",
+					"top": 210,
+					"left": 319,
+					"width": 126,
+					"height": 37,
+					"text": "Window Banner",
+					"focusable": false,
+					"method": "ObjectMethods/Button1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"AJUI_Banner": {
+					"type": "input",
+					"top": 554,
+					"left": 14,
+					"width": 206,
+					"height": 129,
+					"visibility": "hidden",
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"method": "ObjectMethods/AJUI_Banner.4dm",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"phoneNumber_fo": {
+					"type": "input",
+					"top": 298,
+					"left": 45,
+					"width": 175,
+					"height": 17,
+					"multiline": "no",
+					"placeholder": "Phone number",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text": {
+					"type": "text",
+					"top": 284,
+					"left": 45,
+					"width": 114,
+					"height": 13,
+					"stroke": "#0000CD",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 10,
+					"text": "Phone number"
+				},
+				"zoom_obj": {
+					"type": "button",
+					"top": 294,
+					"left": 226,
+					"width": 54,
+					"height": 25,
+					"shortcutKey": "z",
+					"shortcutAccel": true,
+					"shortcutAlt": true,
+					"focusable": false,
+					"icon": "/RESOURCES/Images/ShowSubSet.png",
+					"iconFrames": 4,
+					"style": "custom",
+					"method": "ObjectMethods/zoom_obj.4dm",
+					"events": [
+						"onLoad",
+						"onClick"
+					]
+				},
+				"3D Button": {
+					"type": "button",
+					"top": 16,
+					"left": 431,
+					"width": 29,
+					"height": 26,
+					"focusable": false,
+					"style": "help",
+					"method": "ObjectMethods/3D Button.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button4": {
+					"type": "button",
+					"top": 290,
+					"left": 319,
+					"width": 126,
+					"height": 37,
+					"text": "Spinner",
+					"focusable": false,
+					"method": "ObjectMethods/Button4.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"crBanner": {
+					"type": "groupBox",
+					"top": 139,
+					"left": 23,
+					"width": 432,
+					"height": 84,
+					"stroke": "#0000CD",
+					"text": "Corner Ribbon"
+				},
+				"WinBanner": {
+					"type": "groupBox",
+					"top": 235,
+					"left": 26,
+					"width": 432,
+					"height": 84,
+					"stroke": "#0000CD",
+					"text": "Window banner"
+				},
+				"Button3": {
+					"type": "button",
+					"top": 425,
+					"left": 26,
+					"width": 126,
+					"height": 37,
+					"text": "Go page 1",
+					"focusable": false,
+					"method": "ObjectMethods/Button3.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cr1_btn": {
+					"type": "button",
+					"top": 167,
+					"left": 267,
+					"width": 49,
+					"height": 40,
+					"text": "cr 1",
+					"focusable": false,
+					"method": "ObjectMethods/cr1_btn.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_bottom-left": {
+					"type": "radio",
+					"top": 195,
+					"left": 38,
+					"width": 113,
+					"height": 21,
+					"text": "Bottom-left",
+					"focusable": false,
+					"radioGroup": "Groupe4",
+					"method": "ObjectMethods/btn_bottom-left.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_bottom-right": {
+					"type": "radio",
+					"top": 195,
+					"left": 158,
+					"width": 113,
+					"height": 21,
+					"text": "Bottom-right",
+					"focusable": false,
+					"radioGroup": "Groupe4",
+					"method": "ObjectMethods/btn_bottom-right.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_top-left": {
+					"type": "radio",
+					"top": 155,
+					"left": 38,
+					"width": 113,
+					"height": 21,
+					"text": "Top-left",
+					"focusable": false,
+					"radioGroup": "Groupe4",
+					"method": "ObjectMethods/btn_top-left.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_top-right": {
+					"type": "radio",
+					"top": 155,
+					"left": 158,
+					"width": 113,
+					"height": 21,
+					"text": "Top-right",
+					"focusable": false,
+					"radioGroup": "Groupe4",
+					"method": "ObjectMethods/btn_top-right.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Button5": {
+					"type": "button",
+					"top": 268,
+					"left": 309,
+					"width": 126,
+					"height": 37,
+					"text": "Window Banner",
+					"focusable": false,
+					"method": "ObjectMethods/Button5.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_p2_text": {
+					"type": "radio",
+					"top": 274,
+					"left": 49,
+					"width": 90,
+					"height": 24,
+					"text": "Text",
+					"focusable": false,
+					"radioGroup": "Groupe1",
+					"method": "ObjectMethods/btn_p2_text.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_p2_pict": {
+					"type": "radio",
+					"top": 274,
+					"left": 147,
+					"width": 97,
+					"height": 24,
+					"text": "Picture",
+					"focusable": false,
+					"radioGroup": "Groupe1",
+					"method": "ObjectMethods/btn_p2_pict.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"cr2_btn": {
+					"type": "button",
+					"top": 167,
+					"left": 325,
+					"width": 50,
+					"height": 40,
+					"text": "cr 2",
+					"focusable": false,
+					"method": "ObjectMethods/cr2_btn.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"AJUI_Banner2": {
+					"type": "input",
+					"top": 545,
+					"left": 23,
+					"width": 206,
+					"height": 129,
+					"visibility": "hidden",
+					"dataSourceTypeHint": "picture",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"contextMenu": "none",
+					"dragging": "none",
+					"method": "ObjectMethods/AJUI_Banner2.4dm",
+					"events": [
+						"onClick",
+						"onDataChange"
+					]
+				},
+				"cr2_btn1": {
+					"type": "button",
+					"top": 167,
+					"left": 385,
+					"width": 61,
+					"height": 40,
+					"text": "cr 1&2",
+					"focusable": false,
+					"method": "ObjectMethods/cr2_btn1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"WinBanner2": {
+					"type": "groupBox",
+					"top": 328,
+					"left": 23,
+					"width": 432,
+					"height": 84,
+					"stroke": "#0000CD",
+					"text": "Window Spinner"
+				},
+				"Button6": {
+					"type": "button",
+					"top": 358,
+					"left": 319,
+					"width": 126,
+					"height": 37,
+					"text": "Window spinner",
+					"focusable": false,
+					"method": "ObjectMethods/Button6.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_spinnerLeft": {
+					"type": "radio",
+					"top": 364,
+					"left": 49,
+					"width": 90,
+					"height": 24,
+					"text": "Left",
+					"focusable": false,
+					"radioGroup": "Group1",
+					"method": "ObjectMethods/btn_spinnerLeft.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"btn_spinnerRight": {
+					"type": "radio",
+					"top": 364,
+					"left": 147,
+					"width": 97,
+					"height": 24,
+					"text": "Right ",
+					"focusable": false,
+					"radioGroup": "Group1",
+					"method": "ObjectMethods/btn_spinnerRight.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		}
+	],
+	"editor": {
+		"groups": {
+			"Group6": [
+				"btn_text",
+				"btn_pict"
+			],
+			"Groupe1": [
+				"btn_p2_text",
+				"btn_p2_pict"
+			],
+			"Group1": [
+				"btn_spinnerLeft",
+				"btn_spinnerRight"
+			],
+			"Groupe4": [
+				"btn_bottom-left",
+				"btn_bottom-right",
+				"btn_top-left",
+				"btn_top-right"
+			]
+		}
+	},
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}

@@ -1,219 +1,219 @@
 ﻿{
 	"methods": {
 		"AJUIB_GetSet_bannerPosition": {
-			"timeStamp": "2020-01-20T13:49:13.582Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_textFontName": {
-			"timeStamp": "2020-01-20T13:49:13.580Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_drawSpinner": {
-			"timeStamp": "2020-01-20T13:49:13.586Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_hideBanner": {
-			"timeStamp": "2020-01-20T13:49:13.587Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_RibbonTargetName": {
-			"timeStamp": "2020-01-20T13:49:13.590Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"New AJUI_Banner": {
-			"timeStamp": "2020-01-20T13:49:13.573Z",
+			"timeStamp": "2020-02-06T09:20:01.369Z",
 			"attributes": {
 				"invisible": true,
 				"shared": true
 			}
 		},
 		"AJUIB_Info": {
-			"timeStamp": "2020-01-20T13:51:28.003Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"shared": true,
 				"lang": "en"
 			}
 		},
 		"AJUIB_cornerRibbon": {
-			"timeStamp": "2020-01-20T13:49:13.574Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_isPicture": {
-			"timeStamp": "2020-01-20T13:49:13.578Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_windowSpinnerSide": {
-			"timeStamp": "2020-01-20T13:49:13.588Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_textFontWeight": {
-			"timeStamp": "2020-01-20T13:49:13.581Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_textFontStyle": {
-			"timeStamp": "2020-01-20T13:49:13.581Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_borderSize": {
-			"timeStamp": "2020-01-20T13:49:13.582Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_spinnerScale": {
-			"timeStamp": "2020-01-20T13:49:13.587Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_spinnerAnimation": {
-			"timeStamp": "2020-01-20T13:49:13.585Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_bannerBGColor": {
-			"timeStamp": "2020-01-20T13:49:13.576Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_drawBanner": {
-			"timeStamp": "2020-01-20T13:49:13.572Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_windowBGColor": {
-			"timeStamp": "2020-01-20T13:49:13.575Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_cornerRadius": {
-			"timeStamp": "2020-01-20T13:49:13.578Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_bannerType": {
-			"timeStamp": "2020-01-20T13:49:13.576Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_initFormulas": {
-			"timeStamp": "2020-01-20T13:49:13.574Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_BuildComponent": {
-			"timeStamp": "2020-01-20T13:49:13.588Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_RibbonTargetCoord": {
-			"timeStamp": "2020-01-20T13:49:13.591Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_bannerHeight": {
-			"timeStamp": "2020-01-20T13:49:13.577Z",
+			"timeStamp": "2020-02-06T09:20:01.365Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_picturePath": {
-			"timeStamp": "2020-01-20T13:49:13.579Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_windowRef": {
-			"timeStamp": "2020-01-20T13:49:13.575Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"Compiler_Methods": {
-			"timeStamp": "2020-01-20T13:49:13.584Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_borderColor": {
-			"timeStamp": "2020-01-20T13:49:13.583Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_message": {
-			"timeStamp": "2020-01-20T13:49:13.579Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_name": {
-			"timeStamp": "2020-01-20T13:49:13.583Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_stopSpinnerAnimation": {
-			"timeStamp": "2020-01-20T13:49:13.586Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_textFontSize": {
-			"timeStamp": "2020-01-20T13:49:13.581Z",
+			"timeStamp": "2020-02-06T09:20:01.367Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_windowBanner": {
-			"timeStamp": "2020-01-20T13:49:13.573Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"Launch_HDI_AJUI_Banner": {
-			"timeStamp": "2020-01-20T13:49:13.584Z",
+			"timeStamp": "2020-02-06T09:20:01.368Z",
 			"attributes": {
 				"shared": true
 			}
 		},
 		"AJUIB_GetSet_bannerWidth": {
-			"timeStamp": "2020-01-20T13:49:13.577Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"AJUIB_GetSet_textColor": {
-			"timeStamp": "2020-01-20T13:49:13.580Z",
+			"timeStamp": "2020-02-06T09:20:01.366Z",
 			"attributes": {
 				"invisible": true
 			}

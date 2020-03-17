@@ -18,7 +18,7 @@ If (False:C215)
 End if 
 
 
-C_OBJECT:C1216($banner_options_obj)
+C_OBJECT:C1216($1;$banner_options_obj)
 C_PICTURE:C286($pict)
 C_LONGINT:C283($windowTop_l;$windowLeft_l;$windowBottom_l;$windowRight_l)
 C_LONGINT:C283($targetRibbonLeft_l;$targetRibbonTop_l;$targetRibbonRight_l;$targetRibbonBottom_l)

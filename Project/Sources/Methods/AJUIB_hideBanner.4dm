@@ -16,10 +16,15 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
+C_OBJECT:C1216($1;$banner_options_obj)
 C_TEXT:C284($obj2Use_t)
-C_OBJECT:C1216($banner_options_obj)
 
 $banner_options_obj:=This:C1470
-$obj2Use_t:=$banner_options_obj.banner.name
 
-OBJECT SET VISIBLE:C603(*;$obj2Use_t;False:C215)
+If (Count parameters:C259=0)
+	CALL FORM:C1391(Current form window:C827;Current method name:C684;$banner_options_obj)
+Else 
+	$banner_options_obj:=$1
+	$obj2Use_t:=$banner_options_obj.banner.name
+	OBJECT SET VISIBLE:C603(*;$obj2Use_t;False:C215)
+End if 

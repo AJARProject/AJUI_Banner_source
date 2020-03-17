@@ -20,7 +20,7 @@ End if
 
 C_TEXT:C284($0)
 
-$version_t:="1.7.0-Build18"  // Mon, 20 Jan 2020 13:51:28 GMT
+$version_t:="1.7.1-Build19"  // Tue, 17 Mar 2020 09:55:21 GMT
 
 $0:="AJUI Banner (v18) : "+$version_t
 

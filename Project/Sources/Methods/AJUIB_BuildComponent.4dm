@@ -1,4 +1,4 @@
-//%attributes = {"invisible":true}
+//%attributes = {}
   // AJUIB_BuildComponent (  )
   //
   //

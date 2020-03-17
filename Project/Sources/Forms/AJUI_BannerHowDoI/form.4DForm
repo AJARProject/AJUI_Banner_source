@@ -559,19 +559,19 @@
 				"btn_text",
 				"btn_pict"
 			],
-			"Groupe1": [
-				"btn_p2_text",
-				"btn_p2_pict"
-			],
-			"Group1": [
-				"btn_spinnerLeft",
-				"btn_spinnerRight"
-			],
 			"Groupe4": [
 				"btn_bottom-left",
 				"btn_bottom-right",
 				"btn_top-left",
 				"btn_top-right"
+			],
+			"Group1": [
+				"btn_spinnerLeft",
+				"btn_spinnerRight"
+			],
+			"Groupe1": [
+				"btn_p2_text",
+				"btn_p2_pict"
 			]
 		}
 	},

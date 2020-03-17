@@ -1,9 +1,0 @@
-﻿{
-	"forms": {
-		"AJUI_BannerHowDoI": {
-			"timeStamp": "2020-02-06T09:20:01.364Z",
-			"destination": "detailScreen",
-			"shared": true
-		}
-	}
-}

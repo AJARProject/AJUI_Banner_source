@@ -1,4 +1,4 @@
-//%attributes = {"shared":true,"lang":"en"}
+//%attributes = {"invisible":true,"shared":true,"lang":"en"}
   // AJUIB_Info( ) -> return
   //
   // return : (text) (return) version
@@ -20,7 +20,7 @@ End if
 
 C_TEXT:C284($0)
 
-$version_t:="1.7.1-Build19"  // Tue, 17 Mar 2020 09:55:21 GMT
+$version_t:="1.7.1-Build20"  // Thu, 04 Jun 2020 09:48:46 GMT
 
 $0:="AJUI Banner (v18) : "+$version_t
 

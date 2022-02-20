@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="5">
+<?xml version="1.0" encoding="UTF-8"?><preferences stamp="6">
 	<com.4d>
 		<deployment>
 			<options/>
 		</deployment>
 		<compiler>
-			<options error_file="true" fat_binary="true" symbol_file="true"/>
+			<options error_file="true" fat_binary="true" symbol_file="true" target="all"/>
 		</compiler>
 		<general startup_environnement="1"/>
 		<server>

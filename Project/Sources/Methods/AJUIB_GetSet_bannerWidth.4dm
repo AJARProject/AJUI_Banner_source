@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the width property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:02:58
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($0;$1;$width_l)
+var $width_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.bannerWidth
+If (Count parameters=0)
+	$result:=This.banner.bannerWidth
 Else 
-	$width_l:=$1
+	$width_l:=$param1
 	If ($width_l>=0)
-		This:C1470.banner.bannerWidth:=$width_l
+		This.banner.bannerWidth:=$width_l
 	End if 
 End if 

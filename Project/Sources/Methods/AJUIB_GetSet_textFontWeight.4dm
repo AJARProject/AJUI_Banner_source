@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the text font weight property.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:25:20
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$fontWeight_t)
+var $fontWeight_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.text.textFontWeight
+If (Count parameters=0)
+	$result:=This.text.textFontWeight
 Else 
-	$fontWeight_t:=$1
+	$fontWeight_t:=$param1
 	If ($fontWeight_t#"")
-		This:C1470.text.textFontWeight:=$fontWeight_t
+		This.text.textFontWeight:=$fontWeight_t
 	End if 
 End if 

@@ -1,9 +1,10 @@
-$evt:=Form event code:C388
+var $evt : Integer
+$evt:=Form event code
 
 
 Case of 
-	: ($evt=On Clicked:K2:4)
+	: ($evt=On Clicked)
 		
-		Form:C1466.myBanner.WindowSpinnerSide("right")
+		Form.myBanner.WindowSpinnerSide("right")
 		
 End case 

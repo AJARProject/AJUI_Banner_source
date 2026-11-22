@@ -1,13 +1,14 @@
-$evt:=Form event code:C388
+var $evt : Integer
+$evt:=Form event code
 
 
 Case of 
-	: ($evt=On Clicked:K2:4)
+	: ($evt=On Clicked)
 		
-		Form:C1466.myBanner.IsPicture(True:C214)
-		Form:C1466.myBanner.PicturePath("Images"+Folder separator:K24:12+"info.png")
-		Form:C1466.myBanner.BannerType("window")
-		Form:C1466.myBanner.DrawBanner()
+		Form.myBanner.IsPicture(True)
+		Form.myBanner.PicturePath("Images"+Folder separator+"info.png")
+		Form.myBanner.BannerType("window")
+		Form.myBanner.DrawBanner()
 		
 		
 End case 

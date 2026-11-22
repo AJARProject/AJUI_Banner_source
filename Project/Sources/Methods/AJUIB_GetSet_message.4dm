@@ -7,7 +7,9 @@
   // Getter/Setter for the message property of the banner.
 
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:12:02
@@ -19,11 +21,11 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$message_t)
+var $message_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.text.message
+If (Count parameters=0)
+	$result:=This.text.message
 Else 
-	$message_t:=$1
-	This:C1470.text.message:=$message_t
+	$message_t:=$param1
+	This.text.message:=$message_t
 End if 

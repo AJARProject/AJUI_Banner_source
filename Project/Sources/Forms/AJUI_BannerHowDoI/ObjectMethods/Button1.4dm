@@ -1,18 +1,19 @@
-$evt:=Form event code:C388
+var $evt : Integer
+$evt:=Form event code
 
 
 Case of 
-	: ($evt=On Clicked:K2:4)
-		Form:C1466.myBanner.BannerHeight(150)
-		Form:C1466.myBanner.BannerWidth(400)
-		Form:C1466.myBanner.BannerName("banner")
-		Form:C1466.myBanner.BannerType("window")
-		If (Form:C1466.myBanner.IsPicture())
-			Form:C1466.myBanner.PicturePath(Form:C1466.myBanner.portraitPath)
+	: ($evt=On Clicked)
+		Form.myBanner.BannerHeight(150)
+		Form.myBanner.BannerWidth(400)
+		Form.myBanner.BannerName("banner")
+		Form.myBanner.BannerType("window")
+		If (Form.myBanner.IsPicture())
+			Form.myBanner.PicturePath(Form.myBanner.portraitPath)
 		Else 
-			Form:C1466.myBanner.Message(Form:C1466.myBanner.messageExample)
+			Form.myBanner.Message(Form.myBanner.messageExample)
 		End if 
-		Form:C1466.myBanner.DrawBanner()
+		Form.myBanner.DrawBanner()
 		
 		  //FORM GET OBJECTS($_objects) // just for checking the existing objects form
 		

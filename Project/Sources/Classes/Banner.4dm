@@ -1,6 +1,10 @@
+// Declared so the 21 R4 compiler knows the properties set on This (4D 21 R4 classes).
+// https://developer.4d.com/docs/21-R4/Concepts/classes
+property banner; picture; text; window : Object
+
 Class constructor
 	
-	AJUIB_initAttributes (This:C1470)
+	AJUIB_initAttributes (This)
 	
 Function DrawBanner
 	  // ----------------------
@@ -26,7 +30,7 @@ Function HideBanner
 	
 	AJUIB_hideBanner 
 	
-Function WindowBGColor
+Function WindowBGColor($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Window
 	  // ----------------------
@@ -35,15 +39,14 @@ Function WindowBGColor
 	  // $1 : (text) (optional) color
 	  // $0 : (text) (return) current window background color
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_windowBGColor 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_windowBGColor 
 	Else 
-		AJUIB_GetSet_windowBGColor ($1)
+		AJUIB_GetSet_windowBGColor ($param1)
 	End if 
 	
-Function WindowRef
+Function WindowRef($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Window
 	  // ----------------------
@@ -52,15 +55,14 @@ Function WindowRef
 	  // $1 : (longint) (optional) form ref
 	  // $0 : (longint) (return) current form reference
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_windowRef 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_windowRef 
 	Else 
-		AJUIB_GetSet_windowRef ($1)
+		AJUIB_GetSet_windowRef ($param1)
 	End if 
 	
-Function BannerBGColor
+Function BannerBGColor($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -69,15 +71,14 @@ Function BannerBGColor
 	  // $1 : (text) (optional) color
 	  // $0 : (text) (return) current background color
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_bannerBGColor 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_bannerBGColor 
 	Else 
-		AJUIB_GetSet_bannerBGColor ($1)
+		AJUIB_GetSet_bannerBGColor ($param1)
 	End if 
 	
-Function BannerHeight
+Function BannerHeight($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -86,15 +87,14 @@ Function BannerHeight
 	  // $1 : (longint) (optional) height
 	  // $0 : (longint) (return) current height of the banner
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_bannerHeight 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_bannerHeight 
 	Else 
-		AJUIB_GetSet_bannerHeight ($1)
+		AJUIB_GetSet_bannerHeight ($param1)
 	End if 
 	
-Function BannerName
+Function BannerName($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -103,15 +103,14 @@ Function BannerName
 	  // $1 : (text) (optional) name
 	  // $0 : (text) (return) current name
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_name 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_name 
 	Else 
-		AJUIB_GetSet_name ($1)
+		AJUIB_GetSet_name ($param1)
 	End if 
 	
-Function BannerPosition
+Function BannerPosition($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -120,15 +119,14 @@ Function BannerPosition
 	  // $1 : (text) (optional) position
 	  // $0 : (text) (return) current position
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_bannerPosition 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_bannerPosition 
 	Else 
-		AJUIB_GetSet_bannerPosition ($1)
+		AJUIB_GetSet_bannerPosition ($param1)
 	End if 
 	
-Function BannerType
+Function BannerType($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -137,15 +135,14 @@ Function BannerType
 	  // $1 : (text) (optional) type
 	  // $0 : (text) (return) current type
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_bannerType 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_bannerType 
 	Else 
-		AJUIB_GetSet_bannerType ($1)
+		AJUIB_GetSet_bannerType ($param1)
 	End if 
 	
-Function BannerWidth
+Function BannerWidth($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -154,15 +151,14 @@ Function BannerWidth
 	  // $1 : (longint) (optional) width
 	  // $0 : (longint) (return) current width of the banner
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_bannerWidth 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_bannerWidth 
 	Else 
-		AJUIB_GetSet_bannerWidth ($1)
+		AJUIB_GetSet_bannerWidth ($param1)
 	End if 
 	
-Function BorderColor
+Function BorderColor($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -171,15 +167,14 @@ Function BorderColor
 	  // $1 : (text) (optional) color
 	  // $0 : (text) (return) current border color
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_borderColor 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_borderColor 
 	Else 
-		AJUIB_GetSet_borderColor ($1)
+		AJUIB_GetSet_borderColor ($param1)
 	End if 
 	
-Function BorderSize
+Function BorderSize($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -188,15 +183,14 @@ Function BorderSize
 	  // $1 : (longint) (optional) size
 	  // $0 : (longint) (return) current border size
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_borderSize 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_borderSize 
 	Else 
-		AJUIB_GetSet_borderSize ($1)
+		AJUIB_GetSet_borderSize ($param1)
 	End if 
 	
-Function cornerRadius
+Function cornerRadius($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Banner
 	  // ----------------------
@@ -205,15 +199,14 @@ Function cornerRadius
 	  // $1 : (longint) (optional) corner radius
 	  // $0 : (longint) (return) current corner radius
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_cornerRadius 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_cornerRadius 
 	Else 
-		AJUIB_GetSet_cornerRadius ($1)
+		AJUIB_GetSet_cornerRadius ($param1)
 	End if 
 	
-Function SpinnerScale
+Function SpinnerScale($param1 : Real) -> $result : Real
 	  // ----------------------
 	  // Spinner
 	  // ----------------------
@@ -222,15 +215,14 @@ Function SpinnerScale
 	  // $1 : (real) (optional) scale
 	  // $0 : (real) (return) current scale
 	
-	C_REAL:C285($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_spinnerScale 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_spinnerScale 
 	Else 
-		AJUIB_GetSet_spinnerScale ($1)
+		AJUIB_GetSet_spinnerScale ($param1)
 	End if 
 	
-Function WindowSpinnerSide
+Function WindowSpinnerSide($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Spinner
 	  // ----------------------
@@ -239,15 +231,14 @@ Function WindowSpinnerSide
 	  // $1 : (text) (optional) side
 	  // $0 : (text) (return) current spinner side
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_windowSpinnerSide 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_windowSpinnerSide 
 	Else 
-		AJUIB_GetSet_windowSpinnerSide ($1)
+		AJUIB_GetSet_windowSpinnerSide ($param1)
 	End if 
 	
-Function IsPicture
+Function IsPicture($param1 : Boolean) -> $result : Boolean
 	  // ----------------------
 	  // Picture
 	  // ----------------------
@@ -256,15 +247,14 @@ Function IsPicture
 	  // $1 : (boolean) (optional) show picture ?
 	  // $0 : (boolean) (return) picture currently used ?
 	
-	C_BOOLEAN:C305($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_isPicture 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_isPicture 
 	Else 
-		AJUIB_GetSet_isPicture ($1)
+		AJUIB_GetSet_isPicture ($param1)
 	End if 
 	
-Function PicturePath
+Function PicturePath($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Picture
 	  // ----------------------
@@ -273,15 +263,14 @@ Function PicturePath
 	  // $1 : (text) (optional) file path
 	  // $0 : (text) (return) current picture file path
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_picturePath 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_picturePath 
 	Else 
-		AJUIB_GetSet_picturePath ($1)
+		AJUIB_GetSet_picturePath ($param1)
 	End if 
 	
-Function RibbonTargetCoordinates
+Function RibbonTargetCoordinates($param1 : Integer; $param2 : Integer; $param3 : Integer; $param4 : Integer) -> $result : Object
 	  // ----------------------
 	  // Ribbon
 	  // ----------------------
@@ -293,23 +282,21 @@ Function RibbonTargetCoordinates
 	  // $4 : (longint) (optional) bottom
 	  // $0 : (object) (return) current coordinates
 	
-	C_LONGINT:C283($1;$2;$3;$4)
-	C_OBJECT:C1216($0)
 	
 	Case of 
-		: (Count parameters:C259=0)
-			$0:=AJUIB_GetSet_RibbonTargetCoord 
-		: (Count parameters:C259=1)
-			AJUIB_GetSet_RibbonTargetCoord ($1)
-		: (Count parameters:C259=2)
-			AJUIB_GetSet_RibbonTargetCoord ($1;$2)
-		: (Count parameters:C259=3)
-			AJUIB_GetSet_RibbonTargetCoord ($1;$2;$3)
-		: (Count parameters:C259=4)
-			AJUIB_GetSet_RibbonTargetCoord ($1;$2;$3;$4)
+		: (Count parameters=0)
+			$result:=AJUIB_GetSet_RibbonTargetCoord 
+		: (Count parameters=1)
+			AJUIB_GetSet_RibbonTargetCoord ($param1)
+		: (Count parameters=2)
+			AJUIB_GetSet_RibbonTargetCoord ($param1;$param2)
+		: (Count parameters=3)
+			AJUIB_GetSet_RibbonTargetCoord ($param1;$param2;$param3)
+		: (Count parameters=4)
+			AJUIB_GetSet_RibbonTargetCoord ($param1;$param2;$param3;$param4)
 	End case 
 	
-Function RibbonTargetName
+Function RibbonTargetName($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Ribbon
 	  // ----------------------
@@ -318,15 +305,14 @@ Function RibbonTargetName
 	  // $1 : (text) (optional) form object name
 	  // $0 : (text) (return) current form object name
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_RibbonTargetName 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_RibbonTargetName 
 	Else 
-		AJUIB_GetSet_RibbonTargetName ($1)
+		AJUIB_GetSet_RibbonTargetName ($param1)
 	End if 
 	
-Function Message
+Function Message($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -335,15 +321,14 @@ Function Message
 	  // $1 : (text) (optional) message
 	  // $0 : (text) (return) current message in the banner
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_message 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_message 
 	Else 
-		AJUIB_GetSet_message ($1)
+		AJUIB_GetSet_message ($param1)
 	End if 
 	
-Function TextColor
+Function TextColor($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -352,15 +337,14 @@ Function TextColor
 	  // $1 : (text) (optional) color
 	  // $0 : (text) (return) current text color
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_textColor 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_textColor 
 	Else 
-		AJUIB_GetSet_textColor ($1)
+		AJUIB_GetSet_textColor ($param1)
 	End if 
 	
-Function TextFontName
+Function TextFontName($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -369,15 +353,14 @@ Function TextFontName
 	  // $1 : (text) (optional) font name
 	  // $0 : (text) (return) current font name
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_textFontName 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_textFontName 
 	Else 
-		AJUIB_GetSet_textFontName ($1)
+		AJUIB_GetSet_textFontName ($param1)
 	End if 
 	
-Function TextFontSize
+Function TextFontSize($param1 : Integer) -> $result : Integer
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -386,15 +369,14 @@ Function TextFontSize
 	  // $1 : (text) (optional) font size
 	  // $0 : (text) (return) current font size
 	
-	C_LONGINT:C283($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_textFontSize 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_textFontSize 
 	Else 
-		AJUIB_GetSet_textFontSize ($1)
+		AJUIB_GetSet_textFontSize ($param1)
 	End if 
 	
-Function TextFontStyle
+Function TextFontStyle($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -403,15 +385,14 @@ Function TextFontStyle
 	  // $1 : (text) (optional) font style
 	  // $0 : (text) (return) current font style
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_textFontStyle 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_textFontStyle 
 	Else 
-		AJUIB_GetSet_textFontStyle ($1)
+		AJUIB_GetSet_textFontStyle ($param1)
 	End if 
 	
-Function TextFontWeight
+Function TextFontWeight($param1 : Text) -> $result : Text
 	  // ----------------------
 	  // Text
 	  // ----------------------
@@ -420,10 +401,9 @@ Function TextFontWeight
 	  // $1 : (text) (optional) font weight
 	  // $0 : (text) (return) current font weight
 	
-	C_TEXT:C284($0;$1)
 	
-	If (Count parameters:C259=0)
-		$0:=AJUIB_GetSet_textFontWeight 
+	If (Count parameters=0)
+		$result:=AJUIB_GetSet_textFontWeight 
 	Else 
-		AJUIB_GetSet_textFontWeight ($1)
+		AJUIB_GetSet_textFontWeight ($param1)
 	End if 

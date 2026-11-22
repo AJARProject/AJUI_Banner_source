@@ -6,7 +6,9 @@
   //
   // Getter and Setter to specify an object who will receive the ribbon
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 09.09.19, 13:45:05
@@ -18,11 +20,11 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$name_t)
+var $name_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.ribbon.targetName
+If (Count parameters=0)
+	$result:=This.banner.ribbon.targetName
 Else 
-	$name_t:=$1
-	This:C1470.banner.ribbon.targetName:=$name_t
+	$name_t:=$param1
+	This.banner.ribbon.targetName:=$name_t
 End if 

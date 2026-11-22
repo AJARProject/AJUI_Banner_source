@@ -9,7 +9,9 @@
   //
   // Getter and Setter to put the specific coordinates of an object to place the ribbon
 
-If (False:C215)
+#DECLARE($param1 : Integer; $param2 : Integer; $param3 : Integer; $param4 : Integer) -> $result : Object
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 09.09.19, 13:45:34
@@ -21,15 +23,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($1;$2;$3;$4)
-C_OBJECT:C1216($0)
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.ribbon.targetCoordinates
+If (Count parameters=0)
+	$result:=This.banner.ribbon.targetCoordinates
 Else 
-	This:C1470.banner.ribbon.targetCoordinates.left:=$1
-	This:C1470.banner.ribbon.targetCoordinates.top:=$2
-	This:C1470.banner.ribbon.targetCoordinates.right:=$3
-	This:C1470.banner.ribbon.targetCoordinates.bottom:=$4
+	This.banner.ribbon.targetCoordinates.left:=$param1
+	This.banner.ribbon.targetCoordinates.top:=$param2
+	This.banner.ribbon.targetCoordinates.right:=$param3
+	This.banner.ribbon.targetCoordinates.bottom:=$param4
 End if 
 

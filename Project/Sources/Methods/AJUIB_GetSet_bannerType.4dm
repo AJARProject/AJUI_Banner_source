@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the type property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:01:22
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$type_t)
+var $type_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.type
+If (Count parameters=0)
+	$result:=This.banner.type
 Else 
-	$type_t:=$1
+	$type_t:=$param1
 	If ($type_t#"")
-		This:C1470.banner.type:=$type_t
+		This.banner.type:=$type_t
 	End if 
 End if 

@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the text font name property.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:20:01
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$fontName_t)
+var $fontName_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.text.textFontName
+If (Count parameters=0)
+	$result:=This.text.textFontName
 Else 
-	$fontName_t:=$1
+	$fontName_t:=$param1
 	If ($fontName_t#"")
-		This:C1470.text.textFontName:=$fontName_t
+		This.text.textFontName:=$fontName_t
 	End if 
 End if 

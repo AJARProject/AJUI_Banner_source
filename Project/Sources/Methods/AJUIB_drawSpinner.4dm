@@ -6,7 +6,9 @@
   //
   // This method draw the spinner and rotate the image for each frame
 
-If (False:C215)
+#DECLARE($param1 : Object; $param2 : Boolean)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 12.06.19, 13:25:41
@@ -18,19 +20,16 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($1;$banner_options_obj)
-C_BOOLEAN:C305($2;$setupSpinner_b)
-C_LONGINT:C283($frameId)
-C_LONGINT:C283($bannerY_l;$bannerX_l;$bannerHeight_l;$bannerWidth_l)
-C_LONGINT:C283($bannerY_l;$bannerX_l;$bannerHeight_l;$bannerWidth_l)
-C_LONGINT:C283($textFontSize_l;$textAreaX_l;$textAreaY_l;$textAreaHeight_l;$textAreaWidth)
-C_REAL:C285($scale_r)
-C_TEXT:C284($obj2Use_t;$textFontColor_t;$spinnerSide_t)
-C_PICTURE:C286($spinner_pict)
+var $banner_options_obj : Object
+var $setupSpinner_b : Boolean
+var $frameId; $bannerY_l; $bannerX_l; $bannerHeight_l; $bannerWidth_l; $textFontSize_l; $textAreaX_l; $textAreaY_l; $textAreaHeight_l; $textAreaWidth; $heightSVG_l; $widhtSVG_l; $borderSize; $cornerRadius; $paddingH; $paddingV; $minPaddingSize_r; $translateX; $translateY : Integer
+var $scale_r : Real
+var $obj2Use_t; $textFontColor_t; $spinnerSide_t; $windowBGColor; $path; $dom; $svgRef_t; $Txt_groupReference_ID; $tipTextRectRef_ID; $bannerType_t; $message_t; $textFontName_t; $textFontWeight_t; $textFontStyle_t; $bannerBGColor; $borderColor; $textAlign; $style_definition; $rectBannerRef_t; $textRef_t; $spinnerElem; $spinnerRef_t; $animElem; $spinnerColor : Text
+var $spinner_pict : Picture
 
 
-$banner_options_obj:=$1
-$setupSpinner_b:=$2
+$banner_options_obj:=$param1
+$setupSpinner_b:=$param2
 
 $obj2Use_t:=$banner_options_obj.banner.name
 
@@ -47,14 +46,14 @@ If ($setupSpinner_b)
 	$spinnerSide_t:=$banner_options_obj.banner.spinner.side
 	
 	  //load source file
-	$path:=Get 4D folder:C485(Current resources folder:K5:16)+"SVG"+Folder separator:K24:12+"loading.svg"
-	$dom:=DOM Parse XML source:C719($path)
+	$path:=Get 4D folder(Current resources folder)+"SVG"+Folder separator+"loading.svg"
+	$dom:=DOM Parse XML source($path)
 	
 	  //create a new SVG file
-	$svgRef_t:=DOM Create XML Ref:C861("svg";"http://www.w3.org/2000/svg")
-	DOM SET XML ATTRIBUTE:C866($svgRef_t;"width";$widhtSVG_l;"height";$heightSVG_l)  // svg area
+	$svgRef_t:=DOM Create XML Ref("svg";"http://www.w3.org/2000/svg")
+	DOM SET XML ATTRIBUTE($svgRef_t;"width";$widhtSVG_l;"height";$heightSVG_l)  // svg area
 	
-	$Txt_groupReference_ID:=DOM Create XML element:C865($svgRef_t;"/svg";"id";"rect")
+	$Txt_groupReference_ID:=DOM Create XML element($svgRef_t;"/svg";"id";"rect")
 	
 	$tipTextRectRef_ID:=SVG_New_rect ($Txt_groupReference_ID;0;0;$widhtSVG_l;$heightSVG_l;0;0;"none";$windowBGColor;0)
 	
@@ -113,7 +112,7 @@ If ($setupSpinner_b)
 		$textAreaWidth:=$bannerWidth_l-$paddingH
 		
 		  //style definition
-		$style_definition:="{font-size:"+String:C10($textFontSize_l)+";fill:"+$textFontColor_t+";font-family:"+$textFontName_t+";font-style:"+$textFontStyle_t+";font-weight:"+$textFontWeight_t+";"+$textAlign+"}"
+		$style_definition:="{font-size:"+String($textFontSize_l)+";fill:"+$textFontColor_t+";font-family:"+$textFontName_t+";font-style:"+$textFontStyle_t+";font-weight:"+$textFontWeight_t+";"+$textAlign+"}"
 		
 		
 		$rectBannerRef_t:=SVG_New_rect ($svgRef_t;$bannerX_l;$bannerY_l;$bannerWidth_l;$bannerHeight_l;$cornerRadius;$cornerRadius;$borderColor;$bannerBGColor;$borderSize)
@@ -125,15 +124,15 @@ If ($setupSpinner_b)
 	End if 
 	
 	  //get the spinner element to place it in the last position in the new SVG
-	$spinnerElem:=DOM Find XML element by ID:C1010($dom;"spinner")
-	$spinnerRef_t:=DOM Append XML element:C1082($svgRef_t;$spinnerElem)
+	$spinnerElem:=DOM Find XML element by ID($dom;"spinner")
+	$spinnerRef_t:=DOM Append XML element($svgRef_t;$spinnerElem)
 	
 	  //scale, apply in the second level (anim)
-	$animElem:=DOM Find XML element by ID:C1010($svgRef_t;"anim")
+	$animElem:=DOM Find XML element by ID($svgRef_t;"anim")
 	SVG_SET_TRANSFORM_SCALE ($animElem;$scale_r;$scale_r)
 	
 	  //translate, apply in the first level (spinner), like that the positions X and Y are not scaled when we applied the scale
-	$spinnerElem:=DOM Find XML element by ID:C1010($svgRef_t;"spinner")
+	$spinnerElem:=DOM Find XML element by ID($svgRef_t;"spinner")
 	
 	  //320x320 = SVG size of the source file 
 	If ($bannerType_t="windowSpinner")
@@ -149,33 +148,33 @@ If ($setupSpinner_b)
 	
 	SVG_SET_TRANSFORM_TRANSLATE ($spinnerElem;$translateX;$translateY)
 	
-	$spinnerColor:=DOM Find XML element by ID:C1010($svgRef_t;"line0")
+	$spinnerColor:=DOM Find XML element by ID($svgRef_t;"line0")
 	
 	SVG_SET_ATTRIBUTES ($spinnerColor;"stroke";$textFontColor_t)
 	
-	If (False:C215)
+	If (False)
 		SVGTool_SHOW_IN_VIEWER ($svgRef_t)
 	End if 
 	
-	SVG EXPORT TO PICTURE:C1017($svgRef_t;$spinner_pict;Copy XML data source:K45:17)
+	SVG EXPORT TO PICTURE($svgRef_t;$spinner_pict;Copy XML data source)
 	
 	SVG_CLEAR ($dom)
 	SVG_CLEAR ($svgRef_t)
 	
-	OBJECT Get pointer:C1124(Object named:K67:5;$obj2Use_t)->:=$spinner_pict
-	OBJECT SET COORDINATES:C1248(*;$obj2Use_t;0;0;$widhtSVG_l;$heightSVG_l)
+	OBJECT Get pointer(Object named;$obj2Use_t)->:=$spinner_pict
+	OBJECT SET COORDINATES(*;$obj2Use_t;0;0;$widhtSVG_l;$heightSVG_l)
 	
 	
 	
 	
-	If (Folder separator:K24:12#":")
-		SVG SET ATTRIBUTE:C1055(*;"$obj2Use_t";"";"4d-enableD2D";True:C214)
+	If (Folder separator#":")
+		SVG SET ATTRIBUTE(*;"$obj2Use_t";"";"4d-enableD2D";True)
 	End if 
 	
 Else 
 	
 	  //check the current frame of the spinner
-	SVG GET ATTRIBUTE:C1056(*;$obj2Use_t;"loading";"animation:frame-id";$frameId)
+	SVG GET ATTRIBUTE(*;$obj2Use_t;"loading";"animation:frame-id";$frameId)
 	
 	If ($frameId=12)
 		$frameId:=1
@@ -184,34 +183,34 @@ Else
 	End if 
 	
 	  //update and apply the new frame
-	SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"animation:frame-id";$frameId)
+	SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"animation:frame-id";$frameId)
 	
 	
 	Case of 
 		: ($frameId=1)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(0,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(0,160,160)")
 		: ($frameId=2)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(30,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(30,160,160)")
 		: ($frameId=3)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(60,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(60,160,160)")
 		: ($frameId=4)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(90,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(90,160,160)")
 		: ($frameId=5)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(120,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(120,160,160)")
 		: ($frameId=6)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(150,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(150,160,160)")
 		: ($frameId=7)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(180,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(180,160,160)")
 		: ($frameId=8)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(210,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(210,160,160)")
 		: ($frameId=9)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(240,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(240,160,160)")
 		: ($frameId=10)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(270,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(270,160,160)")
 		: ($frameId=11)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(300,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(300,160,160)")
 		: ($frameId=12)
-			SVG SET ATTRIBUTE:C1055(*;$obj2Use_t;"loading";"transform";"rotate(330,160,160)")
+			SVG SET ATTRIBUTE(*;$obj2Use_t;"loading";"transform";"rotate(330,160,160)")
 	End case 
 	
 End if 

@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the position property of the banner (banner : cr type only).
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 13:58:59
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$position_t)
+var $position_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.position
+If (Count parameters=0)
+	$result:=This.banner.position
 Else 
-	$position_t:=$1
+	$position_t:=$param1
 	If ($position_t#"")
-		This:C1470.banner.position:=$position_t
+		This.banner.position:=$position_t
 	End if 
 End if 

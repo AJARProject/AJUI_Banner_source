@@ -7,7 +7,9 @@
   // Getter/Setter for the name property of the banner.
 
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Maurice Inzirillo
 	  // Date and time: 25.04.19, 08:12:15
@@ -19,13 +21,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$name_t)
+var $name_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.name
+If (Count parameters=0)
+	$result:=This.banner.name
 Else 
-	$name_t:=$1
+	$name_t:=$param1
 	If ($name_t#"")
-		This:C1470.banner.name:=$name_t
+		This.banner.name:=$name_t
 	End if 
 End if 

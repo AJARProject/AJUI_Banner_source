@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the border color property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:04:01
@@ -18,15 +20,15 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$borderColor_t)
+var $borderColor_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.borderColor
+If (Count parameters=0)
+	$result:=This.banner.borderColor
 Else 
-	$borderColor_t:=$1
+	$borderColor_t:=$param1
 	If ($borderColor_t#"")
-		This:C1470.banner.borderColor:=$borderColor_t
+		This.banner.borderColor:=$borderColor_t
 	Else 
-		This:C1470.banner.borderColor:="none"
+		This.banner.borderColor:="none"
 	End if 
 End if 

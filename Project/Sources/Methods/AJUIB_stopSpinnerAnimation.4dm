@@ -4,7 +4,9 @@
   //
   // This method stop the spinner animation and clear the form object picture linked to the instance
 
-If (False:C215)
+#DECLARE($param1 : Object)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 12.06.19, 14:41:14
@@ -15,29 +17,30 @@ If (False:C215)
 	  //
 	  // ----------------------------------------------------
 End if 
-C_PICTURE:C286($pict)
-C_TEXT:C284($obj2Use_t)
-C_OBJECT:C1216($1;$banner_options_obj)
+var $pict : Picture
+var $obj2Use_t : Text
+var $banner_options_obj : Object
+var $bannerFormObjExists : Boolean
 
-If (Count parameters:C259=1)
-	$banner_options_obj:=$1
+If (Count parameters=1)
+	$banner_options_obj:=$param1
 Else 
-	$banner_options_obj:=This:C1470
+	$banner_options_obj:=This
 End if 
 
-If (Not:C34(Storage:C1525.AJUIB_spinner=Null:C1517))
-	Use (Storage:C1525.AJUIB_spinner)
-		Storage:C1525.AJUIB_spinner.activate:=False:C215
+If (Not(Storage.AJUIB_spinner=Null))
+	Use (Storage.AJUIB_spinner)
+		Storage.AJUIB_spinner.activate:=False
 	End use 
 End if 
 
 $obj2Use_t:=$banner_options_obj.banner.name
 
-FORM GET OBJECTS:C898($_objectsForm;Form current page:K67:6+Form inherited:K67:8)
-$bannerFormObjExists:=(Find in array:C230($_objectsForm;$obj2Use_t)>0)
+FORM GET OBJECTS($_objectsForm;Form current page+Form inherited)
+$bannerFormObjExists:=(Find in array($_objectsForm;$obj2Use_t)>0)
 If ($bannerFormObjExists)
 	$pict:=$pict*0
-	OBJECT Get pointer:C1124(Object named:K67:5;$obj2Use_t)->:=$pict
+	OBJECT Get pointer(Object named;$obj2Use_t)->:=$pict
 End if 
 
 

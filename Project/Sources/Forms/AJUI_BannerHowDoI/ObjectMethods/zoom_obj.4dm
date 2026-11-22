@@ -1,16 +1,18 @@
-$evt:=Form event code:C388
-$phoneNumber_fo_ptr:=OBJECT Get pointer:C1124(Object named:K67:5;"phoneNumber_fo")
-C_BOOLEAN:C305($isPicture)
+$evt:=Form event code
+$phoneNumber_fo_ptr:=OBJECT Get pointer(Object named;"phoneNumber_fo")
+var $isPicture : Boolean
+var $evt : Integer
+var $phoneNumber_fo_ptr : Pointer
 Case of 
-	: ($evt=On Load:K2:1)
+	: ($evt=On Load)
 		$phoneNumber_fo_ptr->:="+41 32 342 26 84"
-	: ($evt=On Clicked:K2:4)
-		Form:C1466.myBanner.BannerHeight(150)
-		Form:C1466.myBanner.BannerWidth(400)
-		Form:C1466.myBanner.BannerName("banner")
-		Form:C1466.myBanner.BannerType("window")
-		Form:C1466.myBanner.IsPicture(False:C215)
-		Form:C1466.myBanner.Message($phoneNumber_fo_ptr->)
-		Form:C1466.myBanner.DrawBanner()
-		OBJECT SET VISIBLE:C603(*;"banner";True:C214)
+	: ($evt=On Clicked)
+		Form.myBanner.BannerHeight(150)
+		Form.myBanner.BannerWidth(400)
+		Form.myBanner.BannerName("banner")
+		Form.myBanner.BannerType("window")
+		Form.myBanner.IsPicture(False)
+		Form.myBanner.Message($phoneNumber_fo_ptr->)
+		Form.myBanner.DrawBanner()
+		OBJECT SET VISIBLE(*;"banner";True)
 End case 

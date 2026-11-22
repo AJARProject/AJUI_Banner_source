@@ -6,7 +6,9 @@
   //
   // Getter/Setter to use a picture instead of the text in the banner (banner : window type only).
 
-If (False:C215)
+#DECLARE($param1 : Boolean) -> $result : Boolean
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:08:26
@@ -18,11 +20,11 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_BOOLEAN:C305($0;$1;$isPicture_b)
+var $isPicture_b : Boolean
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.picture.isPicture
+If (Count parameters=0)
+	$result:=This.picture.isPicture
 Else 
-	$isPicture_b:=$1
-	This:C1470.picture.isPicture:=$isPicture_b
+	$isPicture_b:=$param1
+	This.picture.isPicture:=$isPicture_b
 End if 

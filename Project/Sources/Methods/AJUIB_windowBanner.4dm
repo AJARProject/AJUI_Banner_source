@@ -8,7 +8,9 @@
   //
   // This method draw the window banner based on the properties of the banner object
 
-If (False:C215)
+#DECLARE($param1 : Object; $param2 : Integer; $param3 : Integer) -> $result : Picture
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:37:28
@@ -20,18 +22,14 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($1;$banner_options_obj)
-C_PICTURE:C286($0;$pict;$content_pict)
-C_LONGINT:C283($2;$heightSVG_l;$3;$widhtSVG_l)
-C_LONGINT:C283($windowTop_l;$windowLeft_l;$windowBottom_l;$windowRight_l)
-C_LONGINT:C283($bannerY_l;$bannerX_l;$bannerHeight_l;$bannerWidth_l)
-C_LONGINT:C283($textFontSize_l;$textAreaX_l;$textAreaY_l;$textAreaHeight_l;$textAreaWidth)
-C_LONGINT:C283($heighPict_l;$widhtPict_l)
-C_TEXT:C284($textFontColor_t;$textFontName_t;$message_t;$windowBGColor;$textFontWeight_t;$textFontStyle_t)
+var $banner_options_obj : Object
+var $pict; $content_pict : Picture
+var $heightSVG_l; $widhtSVG_l; $windowTop_l; $windowLeft_l; $windowBottom_l; $windowRight_l; $bannerY_l; $bannerX_l; $bannerHeight_l; $bannerWidth_l; $textFontSize_l; $textAreaX_l; $textAreaY_l; $textAreaHeight_l; $textAreaWidth; $heighPict_l; $widhtPict_l; $borderSize; $cornerRadius; $paddingH; $paddingV : Integer
+var $textFontColor_t; $textFontName_t; $message_t; $windowBGColor; $textFontWeight_t; $textFontStyle_t; $bannerBGColor; $borderColor; $svgRef_t; $rectWindowRef_t; $filepath; $pictureRef_t; $style_definition; $rectBannerRef_t; $textRef_t : Text
 
-$banner_options_obj:=$1
-$heightSVG_l:=$2
-$widhtSVG_l:=$3
+$banner_options_obj:=$param1
+$heightSVG_l:=$param2
+$widhtSVG_l:=$param3
 
   //get text options
 $message_t:=$banner_options_obj.text.message
@@ -61,9 +59,9 @@ $rectWindowRef_t:=SVG_New_rect ($svgRef_t;0;0;$widhtSVG_l;$heightSVG_l;0;0;"none
 
 
 If ($banner_options_obj.picture.isPicture)  //use picture instead of the text
-	$filepath:=Get 4D folder:C485(Current resources folder:K5:16)+$banner_options_obj.picture.picturePath
-	READ PICTURE FILE:C678($filepath;$content_pict)
-	PICTURE PROPERTIES:C457($content_pict;$heighPict_l;$widhtPict_l)
+	$filepath:=Get 4D folder(Current resources folder)+$banner_options_obj.picture.picturePath
+	READ PICTURE FILE($filepath;$content_pict)
+	PICTURE PROPERTIES($content_pict;$heighPict_l;$widhtPict_l)
 	
 	$bannerX_l:=($widhtSVG_l/2)-($widhtPict_l/2)
 	$bannerY_l:=($heightSVG_l/2)-($heighPict_l/2)
@@ -95,7 +93,7 @@ Else
 	$textAreaWidth:=$bannerWidth_l-$paddingH
 	
 	  //style definition
-	$style_definition:="{font-size:"+String:C10($textFontSize_l)+";fill:"+$textFontColor_t+";font-family:"+$textFontName_t+";font-style:"+$textFontStyle_t+";font-weight:"+$textFontWeight_t+";text-align:center}"
+	$style_definition:="{font-size:"+String($textFontSize_l)+";fill:"+$textFontColor_t+";font-family:"+$textFontName_t+";font-style:"+$textFontStyle_t+";font-weight:"+$textFontWeight_t+";text-align:center}"
 	
 	
 	$rectBannerRef_t:=SVG_New_rect ($svgRef_t;$bannerX_l;$bannerY_l;$bannerWidth_l;$bannerHeight_l;$cornerRadius;$cornerRadius;$borderColor;$bannerBGColor;$borderSize)
@@ -105,11 +103,11 @@ Else
 End if 
 
 
-If (False:C215)
+If (False)
 	SVGTool_SHOW_IN_VIEWER ($svgRef_t)
 End if 
 
-SVG EXPORT TO PICTURE:C1017($svgRef_t;$pict)
+SVG EXPORT TO PICTURE($svgRef_t;$pict)
 SVG_CLEAR ($svgRef_t)
 
-$0:=$pict
+$result:=$pict

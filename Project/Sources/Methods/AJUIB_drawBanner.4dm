@@ -4,7 +4,9 @@
   //
   // Main function to launch the draw of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Object)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 13:48:48
@@ -18,31 +20,30 @@ If (False:C215)
 End if 
 
 
-C_OBJECT:C1216($1;$banner_options_obj)
-C_PICTURE:C286($pict)
-C_LONGINT:C283($windowTop_l;$windowLeft_l;$windowBottom_l;$windowRight_l)
-C_LONGINT:C283($targetRibbonLeft_l;$targetRibbonTop_l;$targetRibbonRight_l;$targetRibbonBottom_l)
-C_LONGINT:C283($heightWindow_l;$widhtWindow_l;$targetMoveX_l;$targetMoveY_l;$bannerWidth_l)
-C_TEXT:C284($bannerObject_t;$cornerRibbonObject_2use_t;$bannerType_t;$targetRibbonName)
+var $banner_options_obj : Object
+var $pict : Picture
+var $windowTop_l; $windowLeft_l; $windowBottom_l; $windowRight_l; $targetRibbonLeft_l; $targetRibbonTop_l; $targetRibbonRight_l; $targetRibbonBottom_l; $heightWindow_l; $widhtWindow_l; $targetMoveX_l; $targetMoveY_l; $bannerWidth_l : Integer
+var $bannerObject_t; $cornerRibbonObject_2use_t; $bannerType_t; $targetRibbonName; $bannerObject2use_t : Text
+var $bannerFormObjExists; $crFormObjExists : Boolean
 
-$banner_options_obj:=This:C1470
+$banner_options_obj:=This
 
-If (Count parameters:C259=0)
+If (Count parameters=0)
 	
-	CALL FORM:C1391(Current form window:C827;Current method name:C684;$banner_options_obj)
+	CALL FORM(Current form window;Current method name;$banner_options_obj)
 	
 Else 
 	
-	$banner_options_obj:=$1
+	$banner_options_obj:=$param1
 	
 	  //check if we have a banner type
-	If ($banner_options_obj.banner.type#Null:C1517)
+	If ($banner_options_obj.banner.type#Null)
 		
 		  //get coordinates window
 		If ($banner_options_obj.window.windowRef=0)
-			GET WINDOW RECT:C443($windowLeft_l;$windowTop_l;$windowRight_l;$windowBottom_l;Current form window:C827)
+			GET WINDOW RECT($windowLeft_l;$windowTop_l;$windowRight_l;$windowBottom_l;Current form window)
 		Else 
-			GET WINDOW RECT:C443($windowLeft_l;$windowTop_l;$windowRight_l;$windowBottom_l;$banner_options_obj.window.windowRef)
+			GET WINDOW RECT($windowLeft_l;$windowTop_l;$windowRight_l;$windowBottom_l;$banner_options_obj.window.windowRef)
 		End if 
 		
 		  //calculate size window
@@ -50,14 +51,14 @@ Else
 		$widhtWindow_l:=$windowRight_l-$windowLeft_l
 		
 		  //check if we are in the first page of the form
-		If (FORM Get current page:C276=1)
+		If (FORM Get current page=1)
 			$bannerObject_t:="AJUI_Banner"  // object form template
 			$bannerObject2use_t:="AJUI_Banner_2use"
 			$cornerRibbonObject_2use_t:="AJUI_cr_2use"
 		Else 
-			$bannerObject_t:="AJUI_Banner"+String:C10(FORM Get current page:C276)  // object form template
-			$bannerObject2use_t:="AJUI_Banner_2use"+String:C10(FORM Get current page:C276)
-			$cornerRibbonObject_2use_t:="AJUI_cr_2use"+String:C10(FORM Get current page:C276)
+			$bannerObject_t:="AJUI_Banner"+String(FORM Get current page)  // object form template
+			$bannerObject2use_t:="AJUI_Banner_2use"+String(FORM Get current page)
+			$cornerRibbonObject_2use_t:="AJUI_cr_2use"+String(FORM Get current page)
 		End if 
 		
 		  //check the banner case to draw
@@ -75,18 +76,18 @@ Else
 				End if 
 				
 				  // Check if the form object "AJUI_Banner" exists /// MI 24-Apr-2019 10:32:30 (GMT+1)
-				FORM GET OBJECTS:C898($_objectsForm;Form current page:K67:6+Form inherited:K67:8)
-				$bannerFormObjExists:=(Find in array:C230($_objectsForm;$bannerObject2use_t)>0)
-				If (Not:C34($bannerFormObjExists))
-					OBJECT DUPLICATE:C1111(*;$bannerObject_t;$bannerObject2use_t)
+				FORM GET OBJECTS($_objectsForm;Form current page+Form inherited)
+				$bannerFormObjExists:=(Find in array($_objectsForm;$bannerObject2use_t)>0)
+				If (Not($bannerFormObjExists))
+					OBJECT DUPLICATE(*;$bannerObject_t;$bannerObject2use_t)
 				End if 
-				OBJECT SET RESIZING OPTIONS:C1175(*;$bannerObject2use_t;Resize horizontal grow:K42:8;Resize vertical grow:K42:11)
-				OBJECT SET FORMAT:C236(*;$bannerObject2use_t;Char:C90(Scaled to fit:K6:2))
+				OBJECT SET RESIZING OPTIONS(*;$bannerObject2use_t;Resize horizontal grow;Resize vertical grow)
+				OBJECT SET FORMAT(*;$bannerObject2use_t;Char(Scaled to fit))
 				
-				OBJECT Get pointer:C1124(Object named:K67:5;$bannerObject2use_t)->:=AJUIB_windowBanner ($banner_options_obj;$heightWindow_l;$widhtWindow_l)
-				OBJECT SET COORDINATES:C1248(*;$bannerObject2use_t;0;0;$widhtWindow_l;$heightWindow_l)
+				OBJECT Get pointer(Object named;$bannerObject2use_t)->:=AJUIB_windowBanner ($banner_options_obj;$heightWindow_l;$widhtWindow_l)
+				OBJECT SET COORDINATES(*;$bannerObject2use_t;0;0;$widhtWindow_l;$heightWindow_l)
 				
-				OBJECT SET VISIBLE:C603(*;$bannerObject2use_t;True:C214)
+				OBJECT SET VISIBLE(*;$bannerObject2use_t;True)
 				
 			: ($bannerType_t="cornerRibbon")
 				  // *************
@@ -98,14 +99,14 @@ Else
 				End if 
 				
 				  // Check if the form object "AJUI_cr" exists // MI 23-Apr-2019 11:31:40 (GMT+1)
-				FORM GET OBJECTS:C898($_objectsForm;Form current page:K67:6+Form inherited:K67:8)
-				$crFormObjExists:=(Find in array:C230($_objectsForm;$cornerRibbonObject_2use_t)>0)
-				If (Not:C34($crFormObjExists))
-					OBJECT DUPLICATE:C1111(*;$bannerObject_t;$cornerRibbonObject_2use_t)
+				FORM GET OBJECTS($_objectsForm;Form current page+Form inherited)
+				$crFormObjExists:=(Find in array($_objectsForm;$cornerRibbonObject_2use_t)>0)
+				If (Not($crFormObjExists))
+					OBJECT DUPLICATE(*;$bannerObject_t;$cornerRibbonObject_2use_t)
 				End if 
-				OBJECT SET FORMAT:C236(*;$bannerObject2use_t;Char:C90(Truncated non centered:K6:4))
+				OBJECT SET FORMAT(*;$bannerObject2use_t;Char(Truncated non centered))
 				
-				OBJECT Get pointer:C1124(Object named:K67:5;$cornerRibbonObject_2use_t)->:=AJUIB_cornerRibbon ($banner_options_obj)
+				OBJECT Get pointer(Object named;$cornerRibbonObject_2use_t)->:=AJUIB_cornerRibbon ($banner_options_obj)
 				$bannerWidth_l:=$banner_options_obj.banner.bannerWidth/1.414  //diagonal of the square : 1.414 is the root of 2
 				
 				
@@ -120,7 +121,7 @@ Else
 				  //check specific target
 				If ($targetRibbonLeft_l=0) & ($targetRibbonTop_l=0) & ($targetRibbonRight_l=0) & ($targetRibbonBottom_l=0)
 					If ($targetRibbonName#"")
-						OBJECT GET COORDINATES:C663(*;$targetRibbonName;$targetRibbonLeft_l;$targetRibbonTop_l;$targetRibbonRight_l;$targetRibbonBottom_l)
+						OBJECT GET COORDINATES(*;$targetRibbonName;$targetRibbonLeft_l;$targetRibbonTop_l;$targetRibbonRight_l;$targetRibbonBottom_l)
 						
 						$heightWindow_l:=$targetRibbonBottom_l-$targetRibbonTop_l
 						$widhtWindow_l:=$targetRibbonRight_l-$targetRibbonLeft_l
@@ -137,26 +138,26 @@ Else
 				Case of 
 					: ($banner_options_obj.banner.position="top-left")
 						
-						OBJECT SET COORDINATES:C1248(*;$cornerRibbonObject_2use_t;0+$targetMoveX_l;0+$targetMoveY_l;$bannerWidth_l+$targetMoveX_l;$bannerWidth_l+$targetMoveY_l)
+						OBJECT SET COORDINATES(*;$cornerRibbonObject_2use_t;0+$targetMoveX_l;0+$targetMoveY_l;$bannerWidth_l+$targetMoveX_l;$bannerWidth_l+$targetMoveY_l)
 						
 					: ($banner_options_obj.banner.position="top-right")
 						
-						OBJECT SET COORDINATES:C1248(*;$cornerRibbonObject_2use_t;$widhtWindow_l-$bannerWidth_l+$targetMoveX_l;0+$targetMoveY_l;$widhtWindow_l+$targetMoveX_l;$bannerWidth_l+$targetMoveY_l)
-						OBJECT SET RESIZING OPTIONS:C1175(*;$cornerRibbonObject_2use_t;Resize horizontal move:K42:9;Resize vertical none:K42:10)
+						OBJECT SET COORDINATES(*;$cornerRibbonObject_2use_t;$widhtWindow_l-$bannerWidth_l+$targetMoveX_l;0+$targetMoveY_l;$widhtWindow_l+$targetMoveX_l;$bannerWidth_l+$targetMoveY_l)
+						OBJECT SET RESIZING OPTIONS(*;$cornerRibbonObject_2use_t;Resize horizontal move;Resize vertical none)
 						
 					: ($banner_options_obj.banner.position="bottom-left")
 						
-						OBJECT SET COORDINATES:C1248(*;$cornerRibbonObject_2use_t;0+$targetMoveX_l;$heightWindow_l-$bannerWidth_l+$targetMoveY_l;$bannerWidth_l+$targetMoveX_l;$heightWindow_l+$targetMoveY_l)
-						OBJECT SET RESIZING OPTIONS:C1175(*;$cornerRibbonObject_2use_t;Resize horizontal none:K42:7;Resize vertical move:K42:12)
+						OBJECT SET COORDINATES(*;$cornerRibbonObject_2use_t;0+$targetMoveX_l;$heightWindow_l-$bannerWidth_l+$targetMoveY_l;$bannerWidth_l+$targetMoveX_l;$heightWindow_l+$targetMoveY_l)
+						OBJECT SET RESIZING OPTIONS(*;$cornerRibbonObject_2use_t;Resize horizontal none;Resize vertical move)
 						
 					: ($banner_options_obj.banner.position="bottom-right")
 						
-						OBJECT SET COORDINATES:C1248(*;$cornerRibbonObject_2use_t;$widhtWindow_l-$bannerWidth_l+$targetMoveX_l;$heightWindow_l-$bannerWidth_l+$targetMoveY_l;$widhtWindow_l+$targetMoveX_l;$heightWindow_l+$targetMoveY_l)
-						OBJECT SET RESIZING OPTIONS:C1175(*;$cornerRibbonObject_2use_t;Resize horizontal move:K42:9;Resize vertical move:K42:12)
+						OBJECT SET COORDINATES(*;$cornerRibbonObject_2use_t;$widhtWindow_l-$bannerWidth_l+$targetMoveX_l;$heightWindow_l-$bannerWidth_l+$targetMoveY_l;$widhtWindow_l+$targetMoveX_l;$heightWindow_l+$targetMoveY_l)
+						OBJECT SET RESIZING OPTIONS(*;$cornerRibbonObject_2use_t;Resize horizontal move;Resize vertical move)
 						
 				End case 
 				
-				OBJECT SET VISIBLE:C603(*;$cornerRibbonObject_2use_t;True:C214)
+				OBJECT SET VISIBLE(*;$cornerRibbonObject_2use_t;True)
 				
 				  //spinner types
 			: ($bannerType_t="spinner") | ($bannerType_t="windowSpinner")
@@ -169,22 +170,22 @@ Else
 				End if 
 				
 				  // Check if the form object "AJUI_Banner" exists /// MI 24-Apr-2019 10:32:30 (GMT+1)
-				FORM GET OBJECTS:C898($_objectsForm;Form current page:K67:6+Form inherited:K67:8)
-				$bannerFormObjExists:=(Find in array:C230($_objectsForm;$bannerObject2use_t)>0)
-				If (Not:C34($bannerFormObjExists))
-					OBJECT DUPLICATE:C1111(*;$bannerObject_t;$bannerObject2use_t)
+				FORM GET OBJECTS($_objectsForm;Form current page+Form inherited)
+				$bannerFormObjExists:=(Find in array($_objectsForm;$bannerObject2use_t)>0)
+				If (Not($bannerFormObjExists))
+					OBJECT DUPLICATE(*;$bannerObject_t;$bannerObject2use_t)
 				End if 
-				OBJECT SET RESIZING OPTIONS:C1175(*;$bannerObject2use_t;Resize horizontal grow:K42:8;Resize vertical grow:K42:11)
-				OBJECT SET FORMAT:C236(*;$bannerObject2use_t;Char:C90(Scaled to fit:K6:2))
+				OBJECT SET RESIZING OPTIONS(*;$bannerObject2use_t;Resize horizontal grow;Resize vertical grow)
+				OBJECT SET FORMAT(*;$bannerObject2use_t;Char(Scaled to fit))
 				
-				If (Storage:C1525.AJUIB_spinner=Null:C1517)
-					Use (Storage:C1525)
-						Storage:C1525.AJUIB_spinner:=New shared object:C1526
+				If (Storage.AJUIB_spinner=Null)
+					Use (Storage)
+						Storage.AJUIB_spinner:=New shared object
 					End use 
 				End if 
 				
-				Use (Storage:C1525.AJUIB_spinner)
-					Storage:C1525.AJUIB_spinner.activate:=True:C214
+				Use (Storage.AJUIB_spinner)
+					Storage.AJUIB_spinner.activate:=True
 				End use 
 				
 				  //update spinner properties
@@ -192,18 +193,18 @@ Else
 				$banner_options_obj.banner.spinner.windowWidht:=$widhtWindow_l
 				
 				If ($banner_options_obj.window.windowRef=0)
-					$banner_options_obj.banner.spinner.windowRef:=Current form window:C827
+					$banner_options_obj.banner.spinner.windowRef:=Current form window
 				End if 
 				
 				
-				CALL WORKER:C1389("AJUIB_spinner";"AJUIB_spinnerAnimation";$banner_options_obj)
+				CALL WORKER("AJUIB_spinner";"AJUIB_spinnerAnimation";$banner_options_obj)
 				
-				OBJECT SET VISIBLE:C603(*;$bannerObject2use_t;True:C214)
+				OBJECT SET VISIBLE(*;$bannerObject2use_t;True)
 			Else 
-				ALERT:C41("Unknow banner type")
+				ALERT("Unknow banner type")
 				
 		End case 
 	Else 
-		ALERT:C41("Type not specified")
+		ALERT("Type not specified")
 	End if 
 End if 

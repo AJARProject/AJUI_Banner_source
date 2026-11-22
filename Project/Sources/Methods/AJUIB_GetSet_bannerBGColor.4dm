@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the background color property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 13:55:06
@@ -18,15 +20,15 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$BGColor_t)
+var $BGColor_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.bannerBGColor
+If (Count parameters=0)
+	$result:=This.banner.bannerBGColor
 Else 
-	$BGColor_t:=$1
+	$BGColor_t:=$param1
 	If ($BGColor_t#"")
-		This:C1470.banner.bannerBGColor:=$BGColor_t
+		This.banner.bannerBGColor:=$BGColor_t
 	Else 
-		This:C1470.banner.bannerBGColor:="none"
+		This.banner.bannerBGColor:="none"
 	End if 
 End if 

@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the text font style property.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:22:58
@@ -19,13 +21,13 @@ If (False:C215)
 	
 End if 
 
-C_TEXT:C284($0;$1;$fontStyle_t)
+var $fontStyle_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.text.textFontStyle
+If (Count parameters=0)
+	$result:=This.text.textFontStyle
 Else 
-	$fontStyle_t:=$1
+	$fontStyle_t:=$param1
 	If ($fontStyle_t#"")
-		This:C1470.text.textFontStyle:=$fontStyle_t
+		This.text.textFontStyle:=$fontStyle_t
 	End if 
 End if 

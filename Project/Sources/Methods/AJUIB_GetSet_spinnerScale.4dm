@@ -6,7 +6,9 @@
   //
   // Getter and setter for the scale to apply for the spinner size
 
-If (False:C215)
+#DECLARE($param1 : Real) -> $result : Real
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 13.06.19, 15:19:21
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_REAL:C285($0;$1;$scale_r)
+var $scale_r : Real
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.spinner.scale
+If (Count parameters=0)
+	$result:=This.banner.spinner.scale
 Else 
-	$scale_r:=$1
+	$scale_r:=$param1
 	If ($scale_r>=0)
-		This:C1470.banner.spinner.scale:=$scale_r
+		This.banner.spinner.scale:=$scale_r
 	End if 
 End if 

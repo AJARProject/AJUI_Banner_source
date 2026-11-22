@@ -6,7 +6,9 @@
   //
   // Getter/Setter for window reference property.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:29:59
@@ -19,11 +21,11 @@ If (False:C215)
 End if 
 
 
-C_LONGINT:C283($0;$1;$windowRef_l)
+var $windowRef_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.window.windowRef
+If (Count parameters=0)
+	$result:=This.window.windowRef
 Else 
-	$windowRef_l:=$1
-	This:C1470.window.windowRef:=$windowRef_l
+	$windowRef_l:=$param1
+	This.window.windowRef:=$windowRef_l
 End if 

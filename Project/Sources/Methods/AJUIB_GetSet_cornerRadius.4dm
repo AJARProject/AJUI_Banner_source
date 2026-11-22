@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the corner rounding property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:06:29
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($0;$1;$cornerRadius_l)
+var $cornerRadius_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.cornerRadius
+If (Count parameters=0)
+	$result:=This.banner.cornerRadius
 Else 
-	$cornerRadius_l:=$1
+	$cornerRadius_l:=$param1
 	If ($cornerRadius_l>=0)
-		This:C1470.banner.cornerRadius:=$cornerRadius_l
+		This.banner.cornerRadius:=$cornerRadius_l
 	End if 
 End if 

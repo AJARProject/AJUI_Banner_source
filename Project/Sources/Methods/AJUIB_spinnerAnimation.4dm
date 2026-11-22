@@ -5,7 +5,9 @@
   //
   // This method launch the drawSpinner method and handle the spinner animation
 
-If (False:C215)
+#DECLARE($param1 : Object)
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 12.06.19, 11:27:26
@@ -17,20 +19,20 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_OBJECT:C1216($1;$banner_options_obj)
-C_LONGINT:C283($refWin)
-C_PICTURE:C286($spinner_pict)
+var $banner_options_obj : Object
+var $refWin : Integer
+var $spinner_pict : Picture
 
-$banner_options_obj:=$1
+$banner_options_obj:=$param1
 $refWin:=$banner_options_obj.banner.spinner.windowRef
 
   //setup spinner
-CALL FORM:C1391($refWin;"AJUIB_drawSpinner";$banner_options_obj;True:C214)
+CALL FORM($refWin;"AJUIB_drawSpinner";$banner_options_obj;True)
 
 
   //animate spinner
-While (Storage:C1525.AJUIB_spinner.activate)
-	CALL FORM:C1391($refWin;"AJUIB_drawSpinner";$banner_options_obj;False:C215)
-	DELAY PROCESS:C323(Current process:C322;5)
+While (Storage.AJUIB_spinner.activate)
+	CALL FORM($refWin;"AJUIB_drawSpinner";$banner_options_obj;False)
+	DELAY PROCESS(Current process;5)
 End while 
 

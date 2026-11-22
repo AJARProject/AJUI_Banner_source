@@ -6,7 +6,9 @@
   //
   // Getter and setter for the spinner side (only windowSpinner type)
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 17.06.19, 10:18:17
@@ -19,13 +21,13 @@ If (False:C215)
 End if 
 
 
-C_TEXT:C284($0;$1;$side_t)
+var $side_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.spinner.side
+If (Count parameters=0)
+	$result:=This.banner.spinner.side
 Else 
-	$side_t:=$1
+	$side_t:=$param1
 	If ($side_t#"")
-		This:C1470.banner.spinner.side:=$side_t
+		This.banner.spinner.side:=$side_t
 	End if 
 End if 

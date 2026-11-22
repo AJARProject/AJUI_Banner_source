@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the path of the picture file in the resources folder.
 
-If (False:C215)
+#DECLARE($param1 : Text) -> $result : Text
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:15:22
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_TEXT:C284($0;$1;$picturePath_t)
+var $picturePath_t : Text
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.picture.picturePath
+If (Count parameters=0)
+	$result:=This.picture.picturePath
 Else 
-	$picturePath_t:=$1
+	$picturePath_t:=$param1
 	If ($picturePath_t#"")
-		This:C1470.picture.picturePath:=$picturePath_t
+		This.picture.picturePath:=$picturePath_t
 	End if 
 End if 

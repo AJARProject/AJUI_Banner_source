@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the border size property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:05:21
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($0;$1;$size_l)
+var $size_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.borderSize
+If (Count parameters=0)
+	$result:=This.banner.borderSize
 Else 
-	$size_l:=$1
+	$size_l:=$param1
 	If ($size_l>=0)
-		This:C1470.banner.borderSize:=$size_l
+		This.banner.borderSize:=$size_l
 	End if 
 End if 

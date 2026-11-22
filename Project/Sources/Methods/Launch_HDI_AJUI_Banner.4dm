@@ -1,12 +1,13 @@
 //%attributes = {"invisible":true,"shared":true}
-C_BOOLEAN:C305($1)
 
 
-If (Count parameters:C259=0)
-	$refProc:=New process:C317("Launch_HDI_AJUI_Banner";0;"HDI AJUI Banner";True:C214)
+#DECLARE($param1 : Boolean)
+
+var $winRef_l; $refProc : Integer
+If (Count parameters=0)
+	$refProc:=New process("Launch_HDI_AJUI_Banner";0;"HDI AJUI Banner";True)
 Else 
-	C_LONGINT:C283($winRef_l)
-	$winRef_l:=Open form window:C675("AJUI_BannerHowDoI";Plain form window:K39:10;Horizontally centered:K39:1;Vertically centered:K39:4)
-	DIALOG:C40("AJUI_BannerHowDoI")
-	CLOSE WINDOW:C154($winRef_l)
+	$winRef_l:=Open form window("AJUI_BannerHowDoI";Plain form window;Horizontally centered;Vertically centered)
+	DIALOG("AJUI_BannerHowDoI")
+	CLOSE WINDOW($winRef_l)
 End if 

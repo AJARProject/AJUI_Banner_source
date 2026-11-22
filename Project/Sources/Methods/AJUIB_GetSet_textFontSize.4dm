@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the text font size property.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 14:21:49
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($0;$1;$fontSize_l)
+var $fontSize_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.text.textFontSize
+If (Count parameters=0)
+	$result:=This.text.textFontSize
 Else 
-	$fontSize_l:=$1
+	$fontSize_l:=$param1
 	If ($fontSize_l>0)
-		This:C1470.text.textFontSize:=$fontSize_l
+		This.text.textFontSize:=$fontSize_l
 	End if 
 End if 

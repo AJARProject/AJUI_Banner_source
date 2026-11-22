@@ -6,7 +6,9 @@
   //
   // Getter/Setter for the height property of the banner.
 
-If (False:C215)
+#DECLARE($param1 : Integer) -> $result : Integer
+
+If (False)
 	  // ----------------------------------------------------
 	  // User name (OS): Gary Criblez
 	  // Date and time: 10.04.19, 13:57:22
@@ -18,13 +20,13 @@ If (False:C215)
 	  // ----------------------------------------------------
 End if 
 
-C_LONGINT:C283($0;$1;$height_l)
+var $height_l : Integer
 
-If (Count parameters:C259=0)
-	$0:=This:C1470.banner.bannerHeight
+If (Count parameters=0)
+	$result:=This.banner.bannerHeight
 Else 
-	$height_l:=$1
+	$height_l:=$param1
 	If ($height_l>=0)
-		This:C1470.banner.bannerHeight:=$height_l
+		This.banner.bannerHeight:=$height_l
 	End if 
 End if 
